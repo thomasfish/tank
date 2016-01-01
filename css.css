@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background: #91D7F9;
+  background: url("imgs/bg2.jpg");
+  background-size: 130% 130%;
+  overflow: hidden;
+  animation: background 5s infinite;
+}
+
+.bubble {
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  position: absolute;
+  animation: float ease infinite;
+}
+
+.fish {
+  height: 100%;
+  width: 100%;
+  animation: swim 1s infinite;
+}
+
+.fish1 {
+  height: 150px;
+  width: 200px;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  animation: swimmove 30s infinite;
+}
+.fish1 .fish {
+  animation-delay: -0.5s;
+}
+.fish2 {
+  height: 120px;
+  width: 240px;
+  position: absolute;
+  top: 50vh;
+  left: 30vw;
+  animation: swimmove 30s -13s infinite;
+}
+
+@keyframes background {
+  from { background-position: 45% 0%; }
+  50% { background-position: 55% 0%; }
+  to { background-position: 45% 0%; }
+}
+@keyframes float {
+  from { margin-top: -8px; margin-left: -8px; }
+  25%  { margin-top: -8px; margin-left: 8px; }
+  50%  { margin-top: 8px; margin-left: -8px; }
+  75%  { margin-top: 8px; margin-left: 8px; }
+  to   { margin-top: -8px; margin-left: -8px; }
+}
+@keyframes swimmove {
+  from { margin-top: -5vw; margin-left: 0; transform: rotateY(180deg); }
+  2%   { transform: none; }
+  25%  { margin-top: -5vw; margin-left: 30vw; transform: none; }
+  27%  { transform: rotateY(180deg); }
+  50%  { margin-top: 5vw; margin-left: 0; transform: rotateY(180deg); }
+  52%  { transform: none; }
+  75%  { margin-top: 5vw; margin-left: 30vw; transform: none; }
+  77%  { transform: rotateY(180deg); }
+  to   { margin-top: -5vw; margin-left: 0; transform: rotateY(180deg); }
+}
+@keyframes swim {
+  from { transform: scale3d(1, 1, 1); }
+  75%  { transform: scale3d(1.2, 0.8, 1); }
+  to   { transform: scale3d(1, 1, 1); }
+}
